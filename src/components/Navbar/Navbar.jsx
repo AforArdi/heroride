@@ -1,6 +1,7 @@
 import { Link, Button } from "@heroui/react";
 import NavLinks from "./NavLinks";
 import Image from "next/image";
+import ProfileDropDown from "../ProfileDropDown";
 
 const navLinks = <>
     <li><NavLinks href="/">Home</NavLinks></li>
@@ -11,9 +12,8 @@ const navLinks = <>
 
 const Navbar = () => {
     return (
-        <div>
-            {/* With right-aligned content */}
-            <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
+        <div className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
+            <nav className=" max-w-7xl mx-auto">
                 <header className="flex h-16 items-center justify-between px-6">
                     <div>
                         <Image src={'https://i.postimg.cc/3N0WPDg6/logo.png'} 
@@ -23,6 +23,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                     <div className="flex items-center gap-4">
+                        <ProfileDropDown></ProfileDropDown>
                         <Link className={'no-underline'} href="/login"><Button className={'bg-[#2D4059]'}>Login</Button></Link>
                         <Link className={'no-underline'} href="/register"><Button className={'bg-[#2D4059]'}>Register</Button></Link>
                     </div>
