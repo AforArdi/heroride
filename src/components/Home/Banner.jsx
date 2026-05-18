@@ -34,7 +34,7 @@ const Banner = () => {
                     pagination={{ clickable: true }}
                     navigation
                     autoplay={{
-                        delay: 2000,
+                        delay: 3000,
                         disableOnInteraction: false,
                     }}
                     className="w-full h-full pb-10" // Adding bottom padding so dots don't cover the image

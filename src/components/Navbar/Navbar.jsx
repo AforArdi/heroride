@@ -1,7 +1,7 @@
 import { Link, Button } from "@heroui/react";
 import NavLinks from "./NavLinks";
 import Image from "next/image";
-import ProfileDropDown from "../ProfileDropDown";
+import ProfileDropDown from "../utils/ProfileDropDown";
 
 const navLinks = <>
     <li><NavLinks href="/">Home</NavLinks></li>
