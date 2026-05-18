@@ -7,7 +7,9 @@ import { redirect } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 
-const ProfileDropDown = () => {
+const ProfileDropDown = ({ user }) => {
+    const { name, email, image } = user || {};
+
     const handleLogout = async () => {
         await authClient.signOut();
         toast.error("You've been logged out")
@@ -18,8 +20,8 @@ const ProfileDropDown = () => {
         <Dropdown>
             <Button aria-label="Menu" variant="ghost" isIconOnly>
                 <Avatar>
-                    <Avatar.Image alt="John Doe" src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3" />
-                    <Avatar.Fallback>JD</Avatar.Fallback>
+                    <Avatar.Image alt={name} src={image} />
+                    <Avatar.Fallback>{name?.split(' ').map(n => n[0]).join('')}</Avatar.Fallback>
                 </Avatar>
             </Button>
             <Dropdown.Popover>
