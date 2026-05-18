@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 const Reviews = async () => {
     const reviews = await getReviews();
-    console.log(reviews);
+    // console.log(reviews);
 
     return (
         <div className="max-w-7xl mx-auto my-20">

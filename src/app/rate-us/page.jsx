@@ -26,7 +26,7 @@ const RateUsPage = () => {
     }
 
     return (
-        <div className=" my-20">
+        <div className="my-20">
             <div className="mb-6 space-y-2">
                 <h2 className="text-3xl font-bold text-center">Rate Our Service</h2>
                 <p className="text-muted text-center">Thank you for choosing HeroRide!</p>
