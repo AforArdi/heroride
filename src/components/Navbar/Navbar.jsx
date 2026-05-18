@@ -11,6 +11,7 @@ const navLinks = <>
 </>
 
 const Navbar = () => {
+
     return (
         <div className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
             <nav className=" max-w-7xl mx-auto">

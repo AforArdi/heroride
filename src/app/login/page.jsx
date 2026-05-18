@@ -38,6 +38,12 @@ const LoginPage = () => {
             toast.error(`${error.message}`);
         }
     }
+    const handleGoogleSign = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
+
     return (
         <div className="my-20">
             <div className="mb-6 space-y-2">
@@ -84,7 +90,7 @@ const LoginPage = () => {
                         <Button type="submit" className={'w-full'}>
                             Login
                         </Button>
-                        <Button type="reset" variant="secondary" className={'flex items-center gap-2 w-full'}>
+                        <Button onClick={handleGoogleSign} type="reset" variant="secondary" className={'flex items-center gap-2 w-full'}>
                             <FcGoogle></FcGoogle> Google
                         </Button>
                     </Fieldset.Actions>

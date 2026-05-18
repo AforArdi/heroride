@@ -23,7 +23,7 @@ const RegisterPage = () => {
         const data = Object.fromEntries(formData.entries());
         // console.log(data);
 
-        const {name, email, imageUrl, password} = data;
+        const { name, email, imageUrl, password } = data;
 
         const { data: res, error } = await authClient.signUp.email({
             name,
@@ -33,13 +33,19 @@ const RegisterPage = () => {
             callbackURL: "/",
         });
 
-        if(res){
+        if (res) {
             toast.success('Registration successful!');
             redirect('/');
         }
-        if(error){
+        if (error) {
             toast.error(`${error.message}`);
         }
+    }
+
+    const handleGoogleSign = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
     }
 
     return (
@@ -116,7 +122,7 @@ const RegisterPage = () => {
                         <Button type="submit" className={'w-full'}>
                             Register
                         </Button>
-                        <Button type="reset" variant="secondary" className={'flex items-center gap-2 w-full'}>
+                        <Button onClick={handleGoogleSign} type="reset" variant="secondary" className={'flex items-center gap-2 w-full'}>
                             <FcGoogle></FcGoogle> Google
                         </Button>
                     </Fieldset.Actions>
