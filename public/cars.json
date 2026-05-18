@@ -1,0 +1,241 @@
+[
+  {
+    "carName": "Toyota Corolla Cross",
+    "dailyRentPrice": 85,
+    "carType": "SUV",
+    "image": "https://i.postimg.cc/ZqSn2ggm/1.png",
+    "seatCapacity": 7,
+    "pickupLocation": "Dhaka",
+    "description": "Comfortable family SUV with smooth automatic transmission and spacious seating.",
+    "availability": true,
+    "features": ["AC", "Bluetooth", "Reverse Camera", "GPS"],
+    "transmission": "Automatic",
+    "fuelType": "Petrol",
+    "mileage": "14 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Honda Civic RS",
+    "dailyRentPrice": 75,
+    "carType": "Sedan",
+    "image": "https://i.postimg.cc/50PtHttt/2.png",
+    "seatCapacity": 5,
+    "pickupLocation": "Chattogram",
+    "description": "Stylish sedan with sporty handling and premium interior comfort.",
+    "availability": true,
+    "features": ["AC", "Sunroof", "Bluetooth", "Cruise Control"],
+    "transmission": "Automatic",
+    "fuelType": "Petrol",
+    "mileage": "15 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Hyundai Tucson",
+    "dailyRentPrice": 95,
+    "carType": "SUV",
+    "image": "https://i.postimg.cc/76BLCLLP/3.png",
+    "seatCapacity": 7,
+    "pickupLocation": "Sylhet",
+    "description": "Modern SUV designed for long road trips and comfortable city driving.",
+    "availability": true,
+    "features": ["GPS", "AC", "Bluetooth", "Parking Sensors"],
+    "transmission": "Automatic",
+    "fuelType": "Diesel",
+    "mileage": "13 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "BMW X5",
+    "dailyRentPrice": 180,
+    "carType": "Luxury",
+    "image": "https://i.postimg.cc/SsZKXKKs/4.png",
+    "seatCapacity": 7,
+    "pickupLocation": "Dhaka",
+    "description": "Luxury SUV with premium leather interior and advanced driving assistance.",
+    "availability": true,
+    "features": ["Leather Seats", "Sunroof", "GPS", "360 Camera"],
+    "transmission": "Automatic",
+    "fuelType": "Petrol",
+    "mileage": "10 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Suzuki Swift",
+    "dailyRentPrice": 45,
+    "carType": "Hatchback",
+    "image": "https://i.postimg.cc/xd3825rW/5.png",
+    "seatCapacity": 5,
+    "pickupLocation": "Rajshahi",
+    "description": "Compact hatchback perfect for city travel and fuel efficiency.",
+    "availability": true,
+    "features": ["AC", "Bluetooth", "USB Charger"],
+    "transmission": "Manual",
+    "fuelType": "Petrol",
+    "mileage": "18 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Kia Sportage",
+    "dailyRentPrice": 100,
+    "carType": "SUV",
+    "image": "https://i.postimg.cc/HLgnRKKY/6.png",
+    "seatCapacity": 7,
+    "pickupLocation": "Khulna",
+    "description": "Reliable SUV with modern technology and spacious cabin.",
+    "availability": false,
+    "features": ["AC", "GPS", "Bluetooth", "Apple CarPlay"],
+    "transmission": "Automatic",
+    "fuelType": "Diesel",
+    "mileage": "12 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Mercedes-Benz C-Class",
+    "dailyRentPrice": 160,
+    "carType": "Luxury",
+    "image": "https://i.postimg.cc/mryksjxK/7.png",
+    "seatCapacity": 5,
+    "pickupLocation": "Dhaka",
+    "description": "Elegant luxury sedan with high-end comfort and performance.",
+    "availability": true,
+    "features": ["Leather Seats", "Ambient Lighting", "GPS", "Sunroof"],
+    "transmission": "Automatic",
+    "fuelType": "Petrol",
+    "mileage": "11 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Nissan X-Trail",
+    "dailyRentPrice": 90,
+    "carType": "SUV",
+    "image": "https://i.postimg.cc/ZRYRKN4C/8.png",
+    "seatCapacity": 7,
+    "pickupLocation": "Barishal",
+    "description": "Family-oriented SUV with strong road performance and safety features.",
+    "availability": true,
+    "features": ["Bluetooth", "AC", "Cruise Control", "GPS"],
+    "transmission": "Automatic",
+    "fuelType": "Hybrid",
+    "mileage": "16 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Tesla Model 3",
+    "dailyRentPrice": 200,
+    "carType": "Electric",
+    "image": "https://i.postimg.cc/nzVzcmpB/9.png",
+    "seatCapacity": 5,
+    "pickupLocation": "Dhaka",
+    "description": "Premium electric sedan with futuristic dashboard and smooth acceleration.",
+    "availability": true,
+    "features": ["Autopilot", "Touchscreen", "GPS", "Bluetooth"],
+    "transmission": "Automatic",
+    "fuelType": "Electric",
+    "mileage": "450 km per charge",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Ford Ranger Raptor",
+    "dailyRentPrice": 140,
+    "carType": "Pickup",
+    "image": "https://i.postimg.cc/bJYJNnp3/10.png",
+    "seatCapacity": 5,
+    "pickupLocation": "Cumilla",
+    "description": "Powerful pickup truck built for rough terrain and adventure trips.",
+    "availability": true,
+    "features": ["4WD", "GPS", "Bluetooth", "Off-road Mode"],
+    "transmission": "Automatic",
+    "fuelType": "Diesel",
+    "mileage": "9 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Audi A6",
+    "dailyRentPrice": 170,
+    "carType": "Luxury",
+    "image": "https://i.postimg.cc/pTVTXjR3/11.png",
+    "seatCapacity": 5,
+    "pickupLocation": "Dhaka",
+    "description": "Executive luxury sedan with refined performance and premium comfort.",
+    "availability": false,
+    "features": ["Leather Seats", "Sunroof", "GPS", "Premium Sound"],
+    "transmission": "Automatic",
+    "fuelType": "Petrol",
+    "mileage": "10 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  },
+
+  {
+    "carName": "Mitsubishi Pajero Sport",
+    "dailyRentPrice": 115,
+    "carType": "SUV",
+    "image": "https://i.postimg.cc/k4j5V5gH/12.png",
+    "seatCapacity": 7,
+    "pickupLocation": "Rangpur",
+    "description": "Durable SUV suitable for highways, family tours, and rough roads.",
+    "availability": true,
+    "features": ["4WD", "AC", "Bluetooth", "Rear Camera"],
+    "transmission": "Automatic",
+    "fuelType": "Diesel",
+    "mileage": "11 km/l",
+    "bookingCount": 0,
+    "owner": {
+      "name": "Ardi",
+      "email": "ardi@gmail.com"
+    }
+  }
+]
