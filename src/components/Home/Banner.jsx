@@ -2,12 +2,10 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-// 2. IMPORT THE PAGINATION MODULE HERE (This is what's missing!)
 import { Pagination, Autoplay } from "swiper/modules";
-
-// 3. Make sure you also have the module's layout styles imported
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const bannerCars = [
     { id: 1, name: 'Car 1', image: 'https://i.postimg.cc/nrtzS8bg/3.png' },
@@ -21,7 +19,15 @@ const Banner = () => {
             <div className="space-y-6 w-full md:w-1/2">
                 <h2 className="text-5xl font-bold">Find Affordable Dream <br /> Cars for Rental</h2>
                 <p className="text-muted">Fulfil your automotive fantasies without breaking the bank. <br /> Check out our affordable car rentals for an opulent yet economical ride.</p>
-                <Button>Explore Cars</Button>
+                <Link href="/cars">
+                    <Button
+                        color="primary"
+                        size="md"
+                        className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-xl hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center"
+                    >
+                        Explore Cars
+                    </Button>
+                </Link>
             </div>
             <div className="w-full md:w-1/2 h-100 relative flex items-center justify-center">
                 <div
@@ -37,7 +43,7 @@ const Banner = () => {
                         delay: 3000,
                         disableOnInteraction: false,
                     }}
-                    className="w-full h-full pb-10" // Adding bottom padding so dots don't cover the image
+                    className="w-full h-full pb-10"
                 >
                     {bannerCars.map((car) => (
                         <SwiperSlide key={car.id} className="flex items-center justify-center">
@@ -49,7 +55,7 @@ const Banner = () => {
                                     height={400}
                                     className="object-contain"
                                     priority
-                                    unoptimized // Useful if postimg.cc hotlinking acts up during development
+                                    unoptimized
                                 />
                             </div>
                         </SwiperSlide>

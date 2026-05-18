@@ -25,19 +25,14 @@ const CarCard = ({ popularCar }) => {
             <Chip
                 variant="flat"
                 className="absolute top-4 left-4 z-10 bg-white/95 text-[#1e40af] font-semibold text-xs border border-gray-100 shadow-sm px-2"
-                startContent={<FaCarSide size={12} className="text-[#2563eb]" />}
             >
-                {carType}
+                <Chip.Label>{carType}</Chip.Label>
             </Chip>
             <Chip
                 variant="flat"
-                className={`absolute top-4 right-4 z-10 font-semibold text-xs border shadow-sm px-2 ${availability
-                        ? 'bg-[#f0fdf4]/95 text-[#166534] border-[#bbf7d0]'
-                        : 'bg-[#fef2f2]/95 text-[#991b1b] border-[#fecaca]'
-                    }`}
-                startContent={<CircleFill width={8} className={availability ? 'text-[#22c55e]' : 'text-[#ef4444]'} />}
+                className={'absolute top-4 right-4 z-10 font-semibold text-xs border shadow-sm px-2'}
             >
-                {availability ? 'Available' : 'Not Available'}
+                <Chip.Label>{availability ? 'Available' : 'Not Available'}</Chip.Label>
             </Chip>
 
             <div className="relative w-full h-56 bg-[#f8fafc]">
