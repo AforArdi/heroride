@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Banner from "@/components/Home/Banner";
 
 export default function Home() {
   return (
-    <div className="text-center text-5xl font-bold mt-5">
-      <h2>Welcome to the Home Page from page.js</h2>
+    <div>
+      <Banner></Banner>
     </div>
   );
 }
