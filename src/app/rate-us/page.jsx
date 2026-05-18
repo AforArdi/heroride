@@ -26,9 +26,12 @@ const RateUsPage = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto my-20">
-            <h2 className="text-3xl font-bold mb-6 text-center">Rate Our Service</h2>
-            <Form className="w-full" onSubmit={onSubmit}>
+        <div className=" my-20">
+            <div className="mb-6 space-y-2">
+                <h2 className="text-3xl font-bold text-center">Rate Our Service</h2>
+                <p className="text-muted text-center">Thank you for choosing HeroRide!</p>
+            </div>
+            <Form className="w-[30%] mx-auto" onSubmit={onSubmit}>
                 <Fieldset>
                     <FieldGroup>
                         <TextField
@@ -57,16 +60,16 @@ const RateUsPage = () => {
                             }}
                         >
                             <Label>Your Feedback</Label>
-                            <TextArea placeholder="Tell us about your experience..." />
+                            <TextArea className="h-32" placeholder="Tell us about your experience..." />
                             <Description>Minimum 20 characters</Description>
                             <FieldError />
                         </TextField>
                     </FieldGroup>
                     <Fieldset.Actions>
-                        <Button type="submit">
-                            Submit Review
+                        <Button type="submit" className={'bg-[#2D4059] text-white'}>
+                            Post Review
                         </Button>
-                        <Button type="reset" variant="secondary">
+                        <Button type="reset" variant="secondary" className={'bg-[#2D4059] text-white'}>
                             Reset
                         </Button>
                     </Fieldset.Actions>
