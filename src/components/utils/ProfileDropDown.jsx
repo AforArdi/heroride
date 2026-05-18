@@ -1,6 +1,6 @@
 "use client";
 import { Button, Dropdown, Label } from "@heroui/react";
-import {Avatar} from "@heroui/react";
+import { Avatar } from "@heroui/react";
 import Link from "next/link";
 import { CiLogout } from "react-icons/ci";
 
@@ -14,24 +14,28 @@ const ProfileDropDown = () => {
                 </Avatar>
             </Button>
             <Dropdown.Popover>
-                <Dropdown.Menu onAction={(key) => console.log(`Selected: ${key}`)}>
-                    <Dropdown.Item id="new-file" textValue="New file">
-                        <Label>
-                            <Link href={'/add-car'}>Add Car</Link>
-                        </Label>
+                <Dropdown.Menu>
+                    <Dropdown.Item id="add-car" as={Link} href="/add-car">
+                        Add Car
                     </Dropdown.Item>
-                    <Dropdown.Item id="copy-link" textValue="Copy link">
-                        <Label>
-                            <Link href={'/my-bookings'}>My Bookings</Link>
-                        </Label>
+
+                    <Dropdown.Item id="my-bookings" as={Link} href="/my-bookings">
+                        My Bookings
                     </Dropdown.Item>
-                    <Dropdown.Item id="edit-file" textValue="Edit file">
-                        <Label>
-                            <Link href={'/my-added-cars'}>My Added Cars</Link>
-                        </Label>
+
+                    <Dropdown.Item id="my-added-cars" as={Link} href="/my-added-cars">
+                        My Added Cars
                     </Dropdown.Item>
-                    <Dropdown.Item id="delete-file" textValue="Delete file" variant="danger">
-                        <Label className="flex items-center gap-2 text-red-500"><CiLogout></CiLogout> Logout</Label>
+
+                    <Dropdown.Item id="rate-us" as={Link} href="/rate-us">
+                        Rate Us
+                    </Dropdown.Item>
+
+                    <Dropdown.Item id="logout" variant="danger" className="text-red-500">
+                        <div className="flex items-center gap-2">
+                            <CiLogout size={16} />
+                            <span>Logout</span>
+                        </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown.Popover>
