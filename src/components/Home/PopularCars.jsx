@@ -11,7 +11,7 @@ const PopularCars = async () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
                     popularCars.map(popularCar => (
-                        <CarCard key={popularCar._id} popularCar={popularCar}></CarCard>
+                        <CarCard key={popularCar._id} car={popularCar}></CarCard>
                     ))
                 }
             </div>

@@ -16,20 +16,19 @@ const featureIconMap = {
     "GPS": <MdGpsFixed className="text-blue-500" size={14} />
 };
 
-const CarCard = ({ popularCar }) => {
+const CarCard = ({ car }) => {
     const {
-        carName, carType, availability, image, seatCapacity, transmission, fuelType, pickupLocation, dailyRentPrice, features } = popularCar;
+        carName, carType, availability, image, seatCapacity, transmission, fuelType, pickupLocation, dailyRentPrice, features } = car;
 
     return (
         <Card className="relative overflow-hidden max-w-xl w-full bg-white shadow-sm border border-gray-100 rounded-2xl p-0">
             <Chip
-                variant="flat"
                 className="absolute top-4 left-4 z-10 bg-white/95 text-[#1e40af] font-semibold text-xs border border-gray-100 shadow-sm px-2"
             >
                 <Chip.Label>{carType}</Chip.Label>
             </Chip>
             <Chip
-                variant="flat"
+                color="success"
                 className={'absolute top-4 right-4 z-10 font-semibold text-xs border shadow-sm px-2'}
             >
                 <Chip.Label>{availability ? 'Available' : 'Not Available'}</Chip.Label>
