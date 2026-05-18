@@ -16,9 +16,9 @@ const featureIconMap = {
     "GPS": <MdGpsFixed className="text-blue-500" size={14} />
 };
 
-const CarCard = ({ car }) => {
+const CarCard = ({ popularCar }) => {
     const {
-        carName, carType, availability, image, seatCapacity, transmission, fuelType, pickupLocation, dailyRentPrice, features } = car;
+        carName, carType, availability, image, seatCapacity, transmission, fuelType, pickupLocation, dailyRentPrice, features } = popularCar;
 
     return (
         <Card className="relative overflow-hidden max-w-xl w-full bg-white shadow-sm border border-gray-100 rounded-2xl p-0">
@@ -59,7 +59,7 @@ const CarCard = ({ car }) => {
                     <div className="text-right">
                         <span className="block text-xs font-medium text-gray-400">Daily Rent</span>
                         <div className="flex items-baseline justify-end">
-                            <span className="text-3xl font-black text-[#2563eb]">${dailyRentPrice}</span>
+                            <span className="text-3xl font-black text-[#2D4059]">${dailyRentPrice}</span>
                             <span className="text-xs font-semibold text-gray-500 ml-1">/ day</span>
                         </div>
                     </div>
