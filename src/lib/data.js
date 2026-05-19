@@ -3,6 +3,11 @@ export const getCars = async ()=>{
     const data = await res.json();
     return data;
 }
+export const getCarById = async (id)=>{
+    const res = await fetch(`http://localhost:5000/cars/${id}`);
+    const data = await res.json();
+    return data;
+}
 export const getPopularCars = async ()=>{
     const res = await fetch('http://localhost:5000/popular');
     const data = await res.json();

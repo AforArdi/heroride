@@ -19,7 +19,7 @@ const featureIconMap = {
 
 const CarCard = ({ car }) => {
     const {
-        carName, carType, availability, image, seatCapacity, transmission, fuelType, pickupLocation, dailyRentPrice, features } = car;
+        carName, carType, availability, image, seatCapacity, transmission, fuelType, pickupLocation, dailyRentPrice, features, _id } = car;
 
     return (
         <Card className="relative overflow-hidden max-w-xl w-full bg-white shadow-sm border border-gray-100 rounded-2xl p-0">
@@ -98,7 +98,7 @@ const CarCard = ({ car }) => {
                         ))}
                     </div>
 
-                    <Link href={'/'}>
+                    <Link href={`/cars/${_id}`}>
                         <Button
                             color="primary"
                             size="md"
