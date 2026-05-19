@@ -18,3 +18,8 @@ export const getReviews = async ()=>{
     const data = await res.json();
     return data;
 }
+export const getAddedCarsById = async (userId) => {
+    const res = await fetch(`http://localhost:5000/added-cars/${userId}`);
+    const data = await res.json();
+    return data;
+}
