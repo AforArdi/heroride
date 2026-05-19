@@ -14,6 +14,7 @@ import {
     TextField,
 } from "@heroui/react";
 import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
 const RateUsPage = () => {
     const onSubmit = async (e) => {
@@ -22,7 +23,10 @@ const RateUsPage = () => {
         const data = Object.fromEntries(formData.entries());
         // console.log(data);
         await AddReviewAction(data);
-        redirect('/');
+        if(data){
+            toast.success("Thank you for your feedback!");
+            redirect('/');
+        }
     }
 
     return (
@@ -51,7 +55,7 @@ const RateUsPage = () => {
                         {/* review message */}
                         <TextField
                             isRequired
-                            name="review"
+                            name="message"
                             validate={(value) => {
                                 if (value.length < 20) {
                                     return "Review must be at least 20 characters";

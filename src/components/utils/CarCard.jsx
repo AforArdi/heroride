@@ -1,3 +1,4 @@
+'use client'
 import { Card, Chip, Button } from "@heroui/react";
 import { CircleFill } from "@gravity-ui/icons";
 import Image from "next/image";
