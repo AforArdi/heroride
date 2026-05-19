@@ -20,6 +20,15 @@ export const AddBookingAction = async (formData)=>{
     })
     return res.json();
 }
+export const DeleteBookingAction=async(carId)=>{
+    const res = await fetch(`http://localhost:5000/my-bookings/${carId}`,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+    })
+    return res.json();
+}
 export const AddCarAction = async (formData) => {
     const res = await fetch('http://localhost:5000/added-cars', {
         method: 'POST',

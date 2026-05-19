@@ -5,19 +5,12 @@ import { getMyBookings } from "@/lib/data";
 import { headers } from "next/headers";
 
 const MyBookings = async () => {
-    // const {
-    //     data: session,
-    //     isPending, //loading state
-    //     error, //error object
-    //     refetch //refetch the session
-    // } = authClient.useSession()
     const session = await auth.api.getSession({
         headers: await headers() // you need to pass the headers object.
     })
     const userId = session?.user?.id;
-
     const myBookings = await getMyBookings(userId);
-    console.log(myBookings);
+    // console.log(myBookings);
 
     return (
         <div className="max-w-7xl w-[70%] mx-auto mt-10 mb-20">

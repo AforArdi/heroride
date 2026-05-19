@@ -1,13 +1,23 @@
+'use client'
+
+import { DeleteBookingAction } from "@/lib/action";
 import { Button, Card, CloseButton } from "@heroui/react";
+import { ObjectId } from "mongodb";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 const BookedCarCard = ({ myBooking }) => {
-    const { carName, date, image, pickupLocation, username, dailyRentPrice, message } = myBooking;
+    const { _id: bookingId, carName, date, image, pickupLocation, username, dailyRentPrice, message } = myBooking;
     const formattedDate = new Date(date).toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'short',
         year: 'numeric'
     });
+
+    const handleCancelBooking=async()=>{
+        await DeleteBookingAction(bookingId);
+        redirect('/my-bookings')
+    }
 
     return (
         <Card className="w-full items-stretch md:flex-row">
@@ -30,7 +40,7 @@ const BookedCarCard = ({ myBooking }) => {
                         <span className="text-xs text-muted">Pickup Date: {formattedDate}</span>
                         <span className="text-xs text-muted">Booked By: {username}</span>
                     </div>
-                    <Button variant="danger-soft">Cancel</Button>
+                    <Button onClick={handleCancelBooking} variant="danger-soft">Cancel</Button>
                 </Card.Footer>
             </div>
         </Card>
