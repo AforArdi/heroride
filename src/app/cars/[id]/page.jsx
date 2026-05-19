@@ -2,34 +2,45 @@ import { getCarById } from "@/lib/data";
 import { Button, Card, Chip, Separator, Avatar } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-    FaStar, 
-    FaRegHeart, 
-    FaChevronLeft, 
-    FaChevronRight 
+import {
+    FaStar,
+    FaRegHeart,
+    FaChevronLeft,
+    FaChevronRight
 } from "react-icons/fa";
-import { 
-    IoLocationOutline, 
-    IoCarOutline, 
-    IoSpeedometerOutline 
+import {
+    IoLocationOutline,
+    IoCarOutline,
+    IoSpeedometerOutline
 } from "react-icons/io5";
 import { FiUsers } from "react-icons/fi";
 import { TbManualGearbox } from "react-icons/tb";
 import { BsFuelPump } from "react-icons/bs";
 import { MdOutlineDateRange, MdOutlineCheckCircleOutline, MdOutlineSecurity, MdOutlineHeadsetMic } from "react-icons/md";
 import BookFormModal from "@/components/utils/BookFormModal";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
 
 const CarsDetailsPage = async ({ params }) => {
     const { id } = await params;
+
+
+    const session = await auth.api.getSession({
+        headers: await headers() // you need to pass the headers object.
+    })
+    const user = session?.user;
+    // console.log(user);
+
     const car = await getCarById(id);
-    
+    // console.log(car);
+
     const {
         carName, dailyRentPrice, carType, image, seatCapacity, transmission, fuelType, pickupLocation, description, availability, mileage, bookingCount, owner, features
     } = car;
 
-    return ( 
+    return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            
+
             {/* Breadcrumbs */}
             <div className="flex items-center gap-2 text-sm font-medium text-gray-500 mb-6">
                 <Link href="/" className="hover:text-gray-900">Home</Link>
@@ -41,10 +52,10 @@ const CarsDetailsPage = async ({ params }) => {
 
             {/* layout parent */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                
+
                 {/* left side */}
                 <div className="lg:col-span-2 space-y-6">
-                    
+
                     {/* Main Featured Image */}
                     <div className="relative w-full h-100 md:h-125 bg-gray-100 rounded-2xl overflow-hidden border border-gray-200">
                         <Chip className="absolute top-5 left-5 z-10 bg-white font-semibold text-blue-700 shadow-sm px-2">
@@ -54,8 +65,8 @@ const CarsDetailsPage = async ({ params }) => {
                             {availability ? 'Available' : 'Not Available'}
                         </Chip>
 
-                        <Image 
-                            src={image} 
+                        <Image
+                            src={image}
                             alt={carName} fill className="object-cover" priority unoptimized
                         />
                     </div>
@@ -84,7 +95,7 @@ const CarsDetailsPage = async ({ params }) => {
 
                 {/* right side */}
                 <div className="space-y-6">
-                    
+
                     {/* Main Action Card */}
                     <Card className="p-6 shadow-sm border border-gray-100 rounded-2xl">
                         {/* Title & Booking Count Badge */}
@@ -107,7 +118,7 @@ const CarsDetailsPage = async ({ params }) => {
                         {/* Book Now Modal */}
                         <div className="mt-6">
                             {/* need to add modal later */}
-                            <BookFormModal car={car}></BookFormModal>
+                            <BookFormModal car={car} user={user}></BookFormModal>
                         </div>
 
                         <Separator className="my-6 bg-gray-100" />
@@ -115,27 +126,27 @@ const CarsDetailsPage = async ({ params }) => {
                         {/* Specifications */}
                         <div className="space-y-4 text-sm">
                             <div className="flex justify-between items-center">
-                                <span className="flex items-center gap-2 text-gray-500 font-medium"><IoCarOutline size={18}/> Car Type</span>
+                                <span className="flex items-center gap-2 text-gray-500 font-medium"><IoCarOutline size={18} /> Car Type</span>
                                 <span className="font-semibold text-gray-900">{carType}</span>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="flex items-center gap-2 text-gray-500 font-medium"><FiUsers size={18}/> Seats</span>
+                                <span className="flex items-center gap-2 text-gray-500 font-medium"><FiUsers size={18} /> Seats</span>
                                 <span className="font-semibold text-gray-900">{seatCapacity} Seats</span>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="flex items-center gap-2 text-gray-500 font-medium"><TbManualGearbox size={18}/> Transmission</span>
+                                <span className="flex items-center gap-2 text-gray-500 font-medium"><TbManualGearbox size={18} /> Transmission</span>
                                 <span className="font-semibold text-gray-900">{transmission}</span>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="flex items-center gap-2 text-gray-500 font-medium"><BsFuelPump size={18}/> Fuel Type</span>
+                                <span className="flex items-center gap-2 text-gray-500 font-medium"><BsFuelPump size={18} /> Fuel Type</span>
                                 <span className="font-semibold text-gray-900">{fuelType}</span>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="flex items-center gap-2 text-gray-500 font-medium"><IoSpeedometerOutline size={18}/> Mileage</span>
+                                <span className="flex items-center gap-2 text-gray-500 font-medium"><IoSpeedometerOutline size={18} /> Mileage</span>
                                 <span className="font-semibold text-gray-900">{mileage}</span>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="flex items-center gap-2 text-gray-500 font-medium"><IoLocationOutline size={18}/> Pick-up Location</span>
+                                <span className="flex items-center gap-2 text-gray-500 font-medium"><IoLocationOutline size={18} /> Pick-up Location</span>
                                 <span className="font-semibold text-gray-900">{pickupLocation}</span>
                             </div>
                         </div>

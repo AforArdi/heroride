@@ -1,24 +1,34 @@
 'use client'
 
-import { Button, Input, Label, Modal, Surface, TextArea, TextField } from "@heroui/react";
+import { AddBookingAction } from "@/lib/action";
+import { Button, Input, Label, DateField, Modal, Surface, TextArea, TextField, Description, ListBox, Select } from "@heroui/react";
 import { FaBookmark } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
-import DriverNeeded from "./DriverNeeded";
-import { getCarById } from "@/lib/data";
 
-const BookFormModal = ({car}) => {
-    const {carName, dailyRentPrice, carType, image, pickupLocation} = car;
+const BookFormModal = ({ car, user }) => {
+    const { _id, carName, dailyRentPrice, carType, image, pickupLocation } = car;
+    const { id, name } = user;
 
-    const onSubmit = async () => {
+    const handleBooking = async (e) => {
+        const formData = new FormData(e.currentTarget);
+        const bookingModalData = Object.fromEntries(formData.entries());
+
         const bookingData = {
             carName,
+            carId: _id,
             dailyRentPrice,
             carType,
-            image, 
+            image,
             pickupLocation,
-            message
+            userId: id,
+            username: name,
+            date: new Date(bookingModalData.bookingDate), 
+            message: bookingModalData.message,
+            driverNeeded: bookingModalData.driverNeeded === "yes", 
         }
-        
+        // call the actiom then
+        // console.log(bookingData);
+        await AddBookingAction(bookingData);
     }
 
     return (
@@ -44,9 +54,37 @@ const BookFormModal = ({car}) => {
                         </Modal.Header>
                         <Modal.Body className="p-6">
                             <Surface variant="default">
-                                <form onSubmit={onSubmit} className="flex flex-col gap-4">
+                                <form onSubmit={handleBooking} className="flex flex-col gap-4">
                                     {/* driver needed */}
-                                    <DriverNeeded></DriverNeeded>
+                                    {/* <DriverNeeded></DriverNeeded> */}
+                                    <Select className="w-full" isRequired name="driverNeeded" placeholder="Select one">
+                                        <Label>Driver Needed</Label>
+                                        <Select.Trigger>
+                                            <Select.Value />
+                                            <Select.Indicator />
+                                        </Select.Trigger>
+                                        <Select.Popover>
+                                            <ListBox>
+                                                <ListBox.Item id="yes" textValue="Yes">
+                                                    Yes
+                                                    <ListBox.ItemIndicator />
+                                                </ListBox.Item>
+                                                <ListBox.Item id="no" textValue="No">
+                                                    No
+                                                    <ListBox.ItemIndicator />
+                                                </ListBox.Item>
+                                            </ListBox>
+                                        </Select.Popover>
+                                        <Description>Select whether you need a driver</Description>
+                                    </Select>
+
+                                    {/* booking date */}
+                                    <DateField className="w-full" name="bookingDate">
+                                        <Label>Date</Label>
+                                        <DateField.Group>
+                                            <DateField.Input>{(segment) => <DateField.Segment segment={segment} />}</DateField.Input>
+                                        </DateField.Group>
+                                    </DateField>
 
                                     {/* special notes */}
                                     <TextField className="w-full" name="message">
