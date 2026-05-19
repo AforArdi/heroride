@@ -17,6 +17,7 @@ import { FiUsers } from "react-icons/fi";
 import { TbManualGearbox } from "react-icons/tb";
 import { BsFuelPump } from "react-icons/bs";
 import { MdOutlineDateRange, MdOutlineCheckCircleOutline, MdOutlineSecurity, MdOutlineHeadsetMic } from "react-icons/md";
+import BookFormModal from "@/components/utils/BookFormModal";
 
 const CarsDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -106,12 +107,7 @@ const CarsDetailsPage = async ({ params }) => {
                         {/* Book Now Modal */}
                         <div className="mt-6">
                             {/* need to add modal later */}
-                            <Button 
-                                size="lg" 
-                                className="w-full bg-[#0a192f] hover:bg-[#112a4d] text-white font-bold rounded-xl py-6"
-                            >
-                                <MdOutlineDateRange size={20} className="mr-1" /> Book Now
-                            </Button>
+                            <BookFormModal car={car}></BookFormModal>
                         </div>
 
                         <Separator className="my-6 bg-gray-100" />
