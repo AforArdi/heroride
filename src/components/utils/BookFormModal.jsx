@@ -2,6 +2,8 @@
 
 import { AddBookingAction } from "@/lib/action";
 import { Button, Input, Label, DateField, Modal, Surface, TextArea, TextField, Description, ListBox, Select } from "@heroui/react";
+import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 import { FaBookmark } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
 
@@ -10,6 +12,7 @@ const BookFormModal = ({ car, user }) => {
     const { id, name } = user;
 
     const handleBooking = async (e) => {
+        e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const bookingModalData = Object.fromEntries(formData.entries());
 
@@ -22,13 +25,17 @@ const BookFormModal = ({ car, user }) => {
             pickupLocation,
             userId: id,
             username: name,
-            date: new Date(bookingModalData.bookingDate), 
+            date: new Date(bookingModalData.bookingDate),
             message: bookingModalData.message,
-            driverNeeded: bookingModalData.driverNeeded === "yes", 
+            driverNeeded: bookingModalData.driverNeeded === "yes",
         }
         // call the actiom then
         // console.log(bookingData);
-        await AddBookingAction(bookingData);
+        if (bookingData) {
+            await AddBookingAction(bookingData);
+            toast.success('Car Booked!');
+            redirect('/my-bookings');
+        }
     }
 
     return (
@@ -95,7 +102,7 @@ const BookFormModal = ({ car, user }) => {
                                         <Button slot="close" variant="secondary">
                                             Cancel
                                         </Button>
-                                        <Button type="submit">Send Message</Button>
+                                        <Button type="submit">Confirm Booking</Button>
                                     </Modal.Footer>
                                 </form>
                             </Surface>

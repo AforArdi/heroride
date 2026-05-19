@@ -12,7 +12,7 @@ export const AddReviewAction = async (formData) => {
 }
 export const AddBookingAction = async (formData)=>{
     const res = await fetch('http://localhost:5000/my-bookings', {
-        method: POST,
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json', 
         },
