@@ -11,31 +11,30 @@ import { HiOutlineDocumentText } from "react-icons/hi2";
 
 const MyAddedCarsPage = async () => {
     const session = await auth.api.getSession({
-        headers: await headers() // you need to pass the headers object.
-    })
+        headers: await headers() 
+    });
     const user = session?.user;
     const userId = user?.id;
 
     const addedCars = await getAddedCarsById(userId) || [];
-    // console.log(addedCars);
-    const {name, price, carType, imageUrl, seatCapacity, pickupLocation, description, availability} = addedCars || {};
 
     return (
-        <div className="max-w-7xl mx-auto my-20 w-full">
-            {/* My Added Cars is gonna show here: {addedCars.length} */}
-            <div className="mb-6 flex items-center justify-between">
-                <div className="space-y-2">
-                    <h2 className="text-3xl font-bold">My Added Cars</h2>
-                    <p className="text-muted">You can edit and update your car's info.</p>
+        <div className="max-w-7xl mx-auto my-20 w-full px-4 xl:px-0">
+            <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                    <h2 className="text-3xl font-bold text-slate-900">My Added Cars</h2>
+                    <p className="text-muted">Manage the cars you have added to HeroRide.</p>
                 </div>
                 <Link href={'/add-car'}>
-                    <Button variant="outline" className={'rounded-none'}>
-                        <CiCirclePlus></CiCirclePlus> Add New Car
+                    <Button className="bg-[#0a192f] text-white rounded-md font-medium px-6 py-2 h-auto">
+                        <CiCirclePlus size={20} className="mr-1" /> Add New Car
                     </Button>
                 </Link>
             </div>
+
             <div className="space-y-6">
                 {addedCars.map((addedCar) => {
+                    // Destructure INSIDE the map so each card gets its own unique data
                     const { _id, name, price, carType, imageUrl, seatCapacity, pickupLocation, description, availability } = addedCar;
 
                     return (
@@ -63,13 +62,11 @@ const MyAddedCarsPage = async () => {
                                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
                                     <div className="flex items-center gap-3">
                                         <h3 className="text-xl font-bold text-gray-900">{name}</h3>
-                                        {/* Color code the badge based on type if you want, using a generic purple/blue here as default */}
                                         <Chip size="sm" variant="flat" color="secondary" className="font-medium text-xs px-1">
                                             {carType}
                                         </Chip>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        {/* You will add your onClick handlers to these buttons later */}
                                         <Button size="sm" variant="bordered" className="border-blue-600 text-blue-600 font-medium rounded-md">
                                             <FiEdit2 size={14} className="mr-1" /> Update
                                         </Button>
@@ -142,7 +139,7 @@ const MyAddedCarsPage = async () => {
                                             <FiLink className="text-gray-400 mt-1 shrink-0" size={16} />
                                             <div className="w-full overflow-hidden">
                                                 <p className="text-xs text-gray-500 mb-0.5">Image URL</p>
-                                                <p className="text-sm font-medium text-gray-900 truncate max-w-[180px]">
+                                                <p className="text-sm font-medium text-gray-900 truncate max-w-45">
                                                     {imageUrl}
                                                 </p>
                                             </div>
@@ -157,8 +154,19 @@ const MyAddedCarsPage = async () => {
 
                 {/* Empty State Handler */}
                 {addedCars.length === 0 && (
-                    <div className="text-center py-20 bg-gray-50 rounded-xl border border-dashed border-gray-300">
-                        <p className="text-gray-500">You haven't added any cars yet.</p>
+                    <div className="flex flex-col items-center justify-center py-24 px-4 bg-gray-50/80 rounded-2xl border-2 border-dashed border-gray-200">
+                        <div className="bg-white p-5 rounded-full shadow-sm mb-5 border border-gray-100">
+                            <IoCarOutline className="text-gray-400" size={48} />
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Your Garage is Empty</h3>
+                        <p className="text-gray-500 text-center max-w-sm mb-6 leading-relaxed">
+                            You haven't listed any cars on HeroRide yet. Add your first vehicle to start receiving bookings and earning money!
+                        </p>
+                        <Link href={'/add-car'}>
+                            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-sm px-6 py-2">
+                                <CiCirclePlus size={20} className="mr-1.5" /> Add Your First Car
+                            </Button>
+                        </Link>
                     </div>
                 )}
             </div>
