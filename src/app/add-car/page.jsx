@@ -3,6 +3,7 @@
 import AvailableSelect from "@/components/utils/AvailableSelect";
 import SelectCarType from "@/components/utils/SelectCarType";
 import { AddCarAction } from "@/lib/action";
+import { authClient } from "@/lib/auth-client";
 import { FloppyDisk } from "@gravity-ui/icons";
 import {
     Button,
@@ -23,6 +24,15 @@ import toast from "react-hot-toast";
 import { CiCirclePlus } from "react-icons/ci";
 
 const AddCarPage = () => {
+    const { 
+        data: session, 
+        isPending, //loading state
+        error, //error object
+        refetch //refetch the session
+    } = authClient.useSession()
+    const user = session?.user;
+    const {id} = user || {};
+
     const route = useRouter();
     const [available, setAvailable] = useState(true);
 
@@ -32,8 +42,9 @@ const AddCarPage = () => {
         const data = Object.fromEntries(formData.entries());
         // help from others
         data.availability = available;
+        data.userId = id;
 
-        console.log(data);
+        // console.log(data);
         if(data){
             await AddCarAction(data);
             toast.success("Car added successfully!");

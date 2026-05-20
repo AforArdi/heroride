@@ -25,7 +25,7 @@ export const getMyBookings=async(userId)=>{
 }
 // need work
 export const getAddedCarsById = async (userId) => {
-    const res = await fetch(`http://localhost:5000/added-cars/${userId}`);
+    const res = await fetch(`http://localhost:5000/my-added-cars/${userId}`);
     const data = await res.json();
     return data;
 }

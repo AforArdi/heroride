@@ -2,12 +2,13 @@
 
 import { AddBookingAction } from "@/lib/action";
 import { Button, Input, Label, DateField, Modal, Surface, TextArea, TextField, Description, ListBox, Select } from "@heroui/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { FaBookmark } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
 
 const BookFormModal = ({ car, user }) => {
+    const router = useRouter();
     const { _id, carName, dailyRentPrice, carType, image, pickupLocation } = car;
     const { id, name } = user;
 
@@ -33,7 +34,7 @@ const BookFormModal = ({ car, user }) => {
         if (bookingData) {
             await AddBookingAction(bookingData);
             toast.success('Car Booked!');
-            redirect('/my-bookings');
+            router.push('/my-bookings');
         }
     }
 
