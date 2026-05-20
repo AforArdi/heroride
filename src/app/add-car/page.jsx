@@ -1,5 +1,6 @@
 'use client'
 
+import AvailableSelect from "@/components/utils/AvailableSelect";
 import SelectCarType from "@/components/utils/SelectCarType";
 import { AddCarAction } from "@/lib/action";
 import { FloppyDisk } from "@gravity-ui/icons";
@@ -16,11 +17,13 @@ import {
     TextField,
     Checkbox
 } from "@heroui/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { CiCirclePlus } from "react-icons/ci";
 
 const AddCarPage = () => {
+    const route = useRouter();
     const [available, setAvailable] = useState(true);
 
     const onSubmit = async (e) => {
@@ -31,11 +34,10 @@ const AddCarPage = () => {
         data.availability = available;
 
         console.log(data);
-        await AddCarAction(data);
-
         if(data){
-            alert("Car added successfully!");
-            redirect('/my-added-cars');
+            await AddCarAction(data);
+            toast.success("Car added successfully!");
+            route.push('/my-added-cars');
         }
     }
 
@@ -145,17 +147,8 @@ const AddCarPage = () => {
                         </TextField>
 
                         {/* Availability status */}
-                        <Checkbox id="basic-terms" name="availability"
-                            isSelected={available}
-                            onChange={() => setAvailable(!available)}
-                        >
-                            <Checkbox.Control>
-                                <Checkbox.Indicator />
-                            </Checkbox.Control>
-                            <Checkbox.Content>
-                                <Label htmlFor="basic-terms">Car is available</Label>
-                            </Checkbox.Content>
-                        </Checkbox>
+                        <AvailableSelect available={available} 
+                        setAvailable={setAvailable}></AvailableSelect>
 
 
                     </FieldGroup>

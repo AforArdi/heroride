@@ -80,7 +80,7 @@ const BookFormModal = ({ car, user }) => {
                                                 </ListBox.Item>
                                             </ListBox>
                                         </Select.Popover>
-                                        <Description>Select whether you need a driver</Description>
+                                        <Description>Select whether you need a driver or not</Description>
                                     </Select>
 
                                     {/* booking date */}

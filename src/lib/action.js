@@ -30,7 +30,7 @@ export const DeleteBookingAction=async(carId)=>{
     return res.json();
 }
 export const AddCarAction = async (formData) => {
-    const res = await fetch('http://localhost:5000/added-cars', {
+    const res = await fetch('http://localhost:5000/my-added-cars', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json', 
