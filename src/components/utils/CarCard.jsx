@@ -91,9 +91,12 @@ const CarCard = ({ car }) => {
                                 variant="flat"
                                 size="sm"
                                 className="bg-[#f1f5f9] text-[#475569] font-semibold text-xs border border-gray-200/60 rounded-lg p-1.5"
-                                startContent={featureIconMap[feature]}
                             >
-                                {feature}
+                                {/* Render the icon and text safely inside the Chip as children */}
+                                <div className="flex items-center gap-1.5">
+                                    {featureIconMap[feature]}
+                                    <span>{feature}</span>
+                                </div>
                             </Chip>
                         ))}
                     </div>
