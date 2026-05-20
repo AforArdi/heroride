@@ -14,9 +14,28 @@ import {
 import { FiEdit2 } from "react-icons/fi";
 import AvailableSelect from "./AvailableSelect";
 import SelectCarType from "./SelectCarType";
+import { UpdateAddedCarAction } from "@/lib/action";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const CarInfoUpdateModal = ({addedCar}) => {
+    const router = useRouter();
+
     const { _id: addedCarId, name, price, carType, imageUrl, seatCapacity, pickupLocation, description, availability } = addedCar;
+
+    const onSubmit=async(e)=>{
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const updatedData = Object.fromEntries(formData.entries());
+        updatedData.availability = updatedData.availability === 'yes';
+
+        console.log(updatedData);
+        if(updatedData){
+            await UpdateAddedCarAction(addedCarId, updatedData);
+            toast.success("Car info updated successfully!");
+            router.refresh();
+        }    
+    }
 
     return (
         <Modal>
@@ -39,7 +58,7 @@ const CarInfoUpdateModal = ({addedCar}) => {
                         </Modal.Header>
                         <Modal.Body className="p-6">
                             <Surface variant="default">
-                                <form className="flex flex-col gap-4">
+                                <form onSubmit={onSubmit} className="flex flex-col gap-4">
                                     {/* price */}
                                     <TextField
                                         isRequired
@@ -116,7 +135,7 @@ const CarInfoUpdateModal = ({addedCar}) => {
                                         <Button slot="close" variant="secondary">
                                             Cancel
                                         </Button>
-                                        <Button slot="close">Update</Button>
+                                        <Button type="submit">Update</Button>
                                     </Modal.Footer>
                                 </form>
                             </Surface>

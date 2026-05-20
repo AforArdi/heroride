@@ -48,3 +48,13 @@ export const DeleteAddedCarAction=async(carId)=>{
     })
     return res.json();
 }
+export const UpdateAddedCarAction=async(carId, formData)=>{
+    const res = await fetch(`http://localhost:5000/my-added-cars/${carId}`,{
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    return res.json();
+}
