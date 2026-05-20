@@ -1,10 +1,10 @@
 import { Description, Label, ListBox, Select } from "@heroui/react";
 
-const AvailableSelect = ({available, setAvailable, defaultAvailability}) => {
+const AvailableSelect = ({defaultAvailability}) => {
     return (
         <Select className="w-full" placeholder="Select one" name="availability"
-        onChange={() => setAvailable(!available)}
-        defaultSelectedKeys={[defaultAvailability ? "yes" : "no"]}
+        // onChange={() => setAvailable(!available)}
+        defaultValue={[defaultAvailability ? "yes" : "no"]}
         >
             <Label>Available for booking?</Label>
             <Select.Trigger>

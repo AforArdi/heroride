@@ -92,7 +92,7 @@ const CarInfoUpdateModal = ({addedCar}) => {
                                     </TextField>
 
                                     {/* Type */}
-                                    <SelectCarType defaultCarType={carType}></SelectCarType>
+                                    <SelectCarType carType={carType}></SelectCarType>
 
                                     {/* location */}
                                     <TextField

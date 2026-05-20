@@ -19,7 +19,7 @@ import {
     Checkbox
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+// import { useState } from "react";
 import toast from "react-hot-toast";
 import { CiCirclePlus } from "react-icons/ci";
 
@@ -34,14 +34,14 @@ const AddCarPage = () => {
     const {id} = user || {};
 
     const route = useRouter();
-    const [available, setAvailable] = useState(true);
+    // const [available, setAvailable] = useState(true);
 
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
         // help from others
-        data.availability = available;
+        data.availability = data.availability === 'yes';
         data.userId = id;
 
         // console.log(data);
@@ -158,8 +158,9 @@ const AddCarPage = () => {
                         </TextField>
 
                         {/* Availability status */}
-                        <AvailableSelect available={available} 
-                        setAvailable={setAvailable}></AvailableSelect>
+                        {/* available={available} 
+                        setAvailable={setAvailable} */}
+                        <AvailableSelect defaultAvailability={true}></AvailableSelect>
 
 
                     </FieldGroup>
