@@ -39,3 +39,12 @@ export const AddCarAction = async (formData) => {
     })
     return res.json();
 }
+export const DeleteAddedCarAction=async(carId)=>{
+    const res = await fetch(`http://localhost:5000/my-added-cars/${carId}`,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+    })
+    return res.json();
+}

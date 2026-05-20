@@ -1,9 +1,11 @@
 "use client";
 import { ComboBox, Description, Input, Label, ListBox } from "@heroui/react";
 
-const SelectCarType = () => {
+const SelectCarType = ({defaultCarType}) => {
     return (
-        <ComboBox className="w-full" isRequired name="carType">
+        <ComboBox className="w-full" isRequired name="carType"
+        defaultSelectedKeys={[defaultCarType ? defaultCarType.toLowerCase() : ""]}
+        >
             <Label>Car Type</Label>
             <ComboBox.InputGroup>
                 <Input placeholder="Search car type" />

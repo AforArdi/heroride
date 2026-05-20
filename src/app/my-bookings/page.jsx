@@ -46,7 +46,7 @@ const MyBookings = async () => {
                         <p className="text-gray-500 text-center max-w-sm mb-6 leading-relaxed">
                             You haven't booked any cars yet. Explore our collection and find the perfect ride for your next journey!
                         </p>
-                        <Link href={'/explore'}>
+                        <Link href={'/cars'}>
                             <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-sm px-6 py-2">
                                 <IoCarOutline size={20} className="mr-1.5" /> Explore Cars
                             </Button>
