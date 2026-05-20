@@ -4,6 +4,7 @@ import { DeleteBookingAction } from "@/lib/action";
 import { Button, Card, CloseButton } from "@heroui/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import CancelModal from "./CancelModal";
 
 const BookedCarCard = ({ myBooking }) => {
     const router = useRouter();
@@ -42,7 +43,7 @@ const BookedCarCard = ({ myBooking }) => {
                         <span className="text-xs text-muted">Booked By: {username}</span>
                         <span className="text-xs text-muted">Driver Needed: {driverNeeded ? 'Yes' : 'No'}</span>
                     </div>
-                    <Button onClick={handleCancelBooking} variant="danger-soft">Cancel</Button>
+                    <CancelModal handleCancelBooking={handleCancelBooking} carName={carName}></CancelModal>
                 </Card.Footer>
             </div>
         </Card>
