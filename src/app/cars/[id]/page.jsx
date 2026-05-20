@@ -66,8 +66,8 @@ const CarsDetailsPage = async ({ params }) => {
                         </Chip>
 
                         <Image
-                            src={image}
-                            alt={carName} fill className="object-cover" priority unoptimized
+                            src={image || 'https://i.postimg.cc/3N0WPDg6/logo.png'}
+                            alt={carName || 'car logo'} fill className="object-cover" priority unoptimized
                         />
                     </div>
 

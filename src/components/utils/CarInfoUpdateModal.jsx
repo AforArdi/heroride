@@ -29,7 +29,7 @@ const CarInfoUpdateModal = ({addedCar}) => {
         const updatedData = Object.fromEntries(formData.entries());
         updatedData.availability = updatedData.availability === 'yes';
 
-        console.log(updatedData);
+        // console.log(updatedData);
         if(updatedData){
             await UpdateAddedCarAction(addedCarId, updatedData);
             toast.success("Car info updated successfully!");
