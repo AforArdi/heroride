@@ -1,10 +1,10 @@
 import { headers } from "next/headers";
 import { auth } from "./auth";
 
-export const getCars = async () => {
-    const res = await fetch('http://localhost:5000/cars');
+export const getCars = async (searchWord='') => {
+    const res = await fetch(`http://localhost:5000/cars?search=${searchWord}`);
     const data = await res.json();
-    return data;
+    return data || [];
 }
 export const getCarById = async (id) => {
     // const {data: token, error} = await authClient.token();
