@@ -1,4 +1,5 @@
-import { authClient } from "./auth-client";
+import { headers } from "next/headers";
+import { auth } from "./auth";
 
 export const getCars = async () => {
     const res = await fetch('http://localhost:5000/cars');
@@ -40,7 +41,6 @@ export const getMyBookings = async (userId) => {
     const data = await res.json();
     return data;
 }
-// need work
 export const getAddedCarsById = async (userId) => {
     const { token } = await auth.api.getToken({
         headers: await headers()
