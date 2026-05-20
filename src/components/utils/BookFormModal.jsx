@@ -29,7 +29,6 @@ const BookFormModal = ({ car, user }) => {
             message: bookingModalData.message,
             driverNeeded: bookingModalData.driverNeeded === "yes",
         }
-        // call the actiom then
         // console.log(bookingData);
         if (bookingData) {
             await AddBookingAction(bookingData);
@@ -63,7 +62,6 @@ const BookFormModal = ({ car, user }) => {
                             <Surface variant="default">
                                 <form onSubmit={handleBooking} className="flex flex-col gap-4">
                                     {/* driver needed */}
-                                    {/* <DriverNeeded></DriverNeeded> */}
                                     <Select className="w-full" isRequired name="driverNeeded" placeholder="Select one">
                                         <Label>Driver Needed</Label>
                                         <Select.Trigger>

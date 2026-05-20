@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 const BookedCarCard = ({ myBooking }) => {
     const router = useRouter();
 
-    const { _id: bookingId, carName, date, image, pickupLocation, username, dailyRentPrice, message } = myBooking;
+    const { _id: bookingId, carName, date, image, pickupLocation, username, dailyRentPrice, driverNeeded, message } = myBooking;
     const formattedDate = new Date(date).toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'short',
@@ -40,6 +40,7 @@ const BookedCarCard = ({ myBooking }) => {
                         <span className="text-sm font-medium text-foreground">Pickup Location: {pickupLocation}</span>
                         <span className="text-xs text-muted">Pickup Date: {formattedDate}</span>
                         <span className="text-xs text-muted">Booked By: {username}</span>
+                        <span className="text-xs text-muted">Driver Needed: {driverNeeded ? 'Yes' : 'No'}</span>
                     </div>
                     <Button onClick={handleCancelBooking} variant="danger-soft">Cancel</Button>
                 </Card.Footer>
