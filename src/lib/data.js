@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { auth } from "./auth";
 
-export const getCars = async (searchWord='', filter='') => {
+export const getCars = async (searchWord = '', filter = '') => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/cars?search=${searchWord}&filter=${filter}`);
     const data = await res.json();
     return data || [];
@@ -16,6 +16,10 @@ export const getCarById = async (id) => {
             'Authorization': `Bearer ${token}`
         }
     });
+    // when backend sends 400 or 404
+    if (!res.ok) {
+        return null;
+    }
     const data = await res.json();
     return data;
 }

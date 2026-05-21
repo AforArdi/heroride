@@ -13,10 +13,12 @@ import {
     TextArea,
     TextField,
 } from "@heroui/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 const RateUsPage = () => {
+    const router = useRouter();
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -25,7 +27,7 @@ const RateUsPage = () => {
         await AddReviewAction(data);
         if(data){
             toast.success("Thank you for your feedback!");
-            redirect('/');
+            router.push('/');
         }
     }
 

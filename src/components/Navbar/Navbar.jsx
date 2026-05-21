@@ -1,9 +1,10 @@
 'use client'
-import { Link, Button } from "@heroui/react";
+import { Button } from "@heroui/react";
 import NavLinks from "./NavLinks";
 import Image from "next/image";
 import ProfileDropDown from "../utils/ProfileDropDown";
 import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
 
 const navLinks = <>
     <li><NavLinks href="/">Home</NavLinks></li>

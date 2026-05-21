@@ -1,5 +1,5 @@
 import {Separator} from "@heroui/react";
-import {Card, Link} from "@heroui/react";
+import {Card} from "@heroui/react";
 import { FaQuoteLeft } from "react-icons/fa";
 
 const ReviewCard = ({ review }) => {

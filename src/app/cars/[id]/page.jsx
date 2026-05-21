@@ -20,6 +20,7 @@ import { MdOutlineDateRange, MdOutlineCheckCircleOutline, MdOutlineSecurity, MdO
 import BookFormModal from "@/components/utils/BookFormModal";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
+import { notFound } from "next/navigation";
 
 const CarsDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -33,6 +34,10 @@ const CarsDetailsPage = async ({ params }) => {
 
     const car = await getCarById(id);
     // console.log(car);
+    // when invalid id is given
+    if(!car){
+        notFound();
+    }
 
     const {
         carName, dailyRentPrice, carType, image, seatCapacity, transmission, fuelType, pickupLocation, description, availability, mileage, bookingCount, owner, features

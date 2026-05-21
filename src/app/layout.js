@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Home/Footer";
 import { Toaster } from "react-hot-toast";
-import HeroThemeProviders from "@/providers/ThemeProvider";
+import HeroThemeProviders from "./providers/ThemeProvider";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 

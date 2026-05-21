@@ -4,19 +4,8 @@ import AvailableSelect from "@/components/utils/AvailableSelect";
 import SelectCarType from "@/components/utils/SelectCarType";
 import { AddCarAction } from "@/lib/action";
 import { authClient } from "@/lib/auth-client";
-import { FloppyDisk } from "@gravity-ui/icons";
 import {
-    Button,
-    Description,
-    FieldError,
-    FieldGroup,
-    Fieldset,
-    Form,
-    Input,
-    Label,
-    TextArea,
-    TextField,
-    Checkbox
+    Button, Description, FieldError, FieldGroup, Fieldset, Form, Input, Label, TextArea, TextField
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
 // import { useState } from "react";
@@ -24,14 +13,14 @@ import toast from "react-hot-toast";
 import { CiCirclePlus } from "react-icons/ci";
 
 const AddCarPage = () => {
-    const { 
-        data: session, 
+    const {
+        data: session,
         isPending, //loading state
         error, //error object
         refetch //refetch the session
     } = authClient.useSession()
     const user = session?.user;
-    const {id} = user || {};
+    const { id } = user || {};
 
     const route = useRouter();
     // const [available, setAvailable] = useState(true);
@@ -45,7 +34,7 @@ const AddCarPage = () => {
         data.userId = id;
 
         // console.log(data);
-        if(data){
+        if (data) {
             await AddCarAction(data);
             toast.success("Car added successfully!");
             route.push('/my-added-cars');
@@ -158,8 +147,6 @@ const AddCarPage = () => {
                         </TextField>
 
                         {/* Availability status */}
-                        {/* available={available} 
-                        setAvailable={setAvailable} */}
                         <AvailableSelect defaultAvailability={true}></AvailableSelect>
 
 
