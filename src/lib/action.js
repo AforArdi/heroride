@@ -8,7 +8,7 @@ export const AddReviewAction = async (formData) => {
         headers: await headers()
     });
 
-    const res = await fetch('http://localhost:5000/reviews', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/reviews`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ export const AddBookingAction = async (formData) => {
     const { token } = await auth.api.getToken({
         headers: await headers()
     });
-    const res = await fetch('http://localhost:5000/my-bookings', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-bookings`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export const DeleteBookingAction = async (carId) => {
     const { token } = await auth.api.getToken({
         headers: await headers()
     });
-    const res = await fetch(`http://localhost:5000/my-bookings/${carId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-bookings/${carId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ export const AddCarAction = async (formData) => {
     const { token } = await auth.api.getToken({
         headers: await headers()
     });
-    const res = await fetch('http://localhost:5000/my-added-cars', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-added-cars`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ export const DeleteAddedCarAction = async (carId) => {
     const { token } = await auth.api.getToken({
         headers: await headers()
     });
-    const res = await fetch(`http://localhost:5000/my-added-cars/${carId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-added-cars/${carId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ export const UpdateAddedCarAction = async (carId, formData) => {
     const { token } = await auth.api.getToken({
         headers: await headers()
     });
-    const res = await fetch(`http://localhost:5000/my-added-cars/${carId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-added-cars/${carId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

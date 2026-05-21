@@ -37,6 +37,7 @@ const CarsDetailsPage = async ({ params }) => {
     const {
         carName, dailyRentPrice, carType, image, seatCapacity, transmission, fuelType, pickupLocation, description, availability, mileage, bookingCount, owner, features
     } = car;
+    console.log(bookingCount);
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -102,7 +103,7 @@ const CarsDetailsPage = async ({ params }) => {
                         <div className="flex flex-col gap-2 items-start">
                             <h1 className="text-2xl font-bold text-gray-900">{carName}</h1>
                             <Chip size="sm" variant="flat" color="primary" className="font-semibold text-xs px-2">
-                                🔥 {bookingCount} {bookingCount === 1 ? 'Booking' : 'Bookings'}
+                                🔥 {bookingCount} Bookings
                             </Chip>
                         </div>
 
