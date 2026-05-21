@@ -1,5 +1,6 @@
 import CarCard from "@/components/utils/CarCard";
 import SearchBar from "@/components/utils/SearchBar";
+import SelectFilter from "@/components/utils/SelectFilter";
 import { getCars } from "@/lib/data";
 
 const ExploreCarsPage = async ({searchParams}) => {
@@ -15,9 +16,7 @@ const ExploreCarsPage = async ({searchParams}) => {
             <div className="flex items-center justify-between my-6">
                 <SearchBar></SearchBar>
                 <div className="w-full sm:w-auto flex justify-end">
-                    {/* You can drop your Select component here later. 
-                    It will automatically push to the right side of the screen on desktop!
-                */}
+                    <SelectFilter></SelectFilter>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
