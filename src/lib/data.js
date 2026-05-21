@@ -1,8 +1,8 @@
 import { headers } from "next/headers";
 import { auth } from "./auth";
 
-export const getCars = async (searchWord='') => {
-    const res = await fetch(`http://localhost:5000/cars?search=${searchWord}`);
+export const getCars = async (searchWord='', filter='') => {
+    const res = await fetch(`http://localhost:5000/cars?search=${searchWord}&filter=${filter}`);
     const data = await res.json();
     return data || [];
 }
