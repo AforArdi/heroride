@@ -22,7 +22,7 @@ const CarCard = ({ car }) => {
         carName, carType, availability, image, seatCapacity, transmission, fuelType, pickupLocation, dailyRentPrice, features, _id } = car;
 
     return (
-        <Card className="relative overflow-hidden max-w-xl w-full bg-white shadow-sm border border-gray-100 rounded-2xl p-0">
+        <Card className="relative overflow-hidden max-w-xl w-full bg-white dark:bg-[#1E293B] shadow-sm border border-gray-100 rounded-2xl p-0">
             <Chip
                 className="absolute top-4 left-4 z-10 bg-white/95 text-[#1e40af] font-semibold text-xs border border-gray-100 shadow-sm px-2"
             >

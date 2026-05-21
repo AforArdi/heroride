@@ -1,8 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Home/Footer";
 import { Toaster } from "react-hot-toast";
+import HeroThemeProviders from "@/providers/ThemeProvider";
+
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,13 +27,18 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      // data-theme='dark'
+      // class='dark'
+      className={`${jakarta.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
-        <Navbar></Navbar>
-        {children}
-        <Footer></Footer>
-        <Toaster />
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <HeroThemeProviders>
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
+          <Toaster />
+        </HeroThemeProviders>
       </body>
     </html>
   );

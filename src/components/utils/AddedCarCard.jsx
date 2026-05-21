@@ -105,7 +105,7 @@ const AddedCarCard = ({ addedCar }) => {
                     </div>
 
                     {/* Column 3 */}
-                    <div className="space-y-4">
+                    {/* <div className="space-y-4">
                         <div className="flex items-start gap-2">
                             <IoCarOutline className="text-gray-400 mt-1 shrink-0" size={16} />
                             <div>
@@ -122,7 +122,7 @@ const AddedCarCard = ({ addedCar }) => {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
