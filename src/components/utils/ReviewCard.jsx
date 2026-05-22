@@ -6,7 +6,7 @@ const ReviewCard = ({ review }) => {
     const {name, message} = review;
 
     return (
-        <Card className="w-100 space-y-2">
+        <Card className="w-75 md:w-100 mx-4 space-y-2">
             <Card.Header>
                 <FaQuoteLeft className="mb-2" size={30} color="#FF7F6E" />
                 <Card.Description className="text-[#2D4059] text-lg">

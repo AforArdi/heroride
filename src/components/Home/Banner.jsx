@@ -15,7 +15,7 @@ const bannerCars = [
 
 const Banner = () => {
     return (
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 mt-10 md:mt-0">
             <div className="space-y-6 w-full md:w-1/2">
                 <h2 className="text-5xl font-bold">Find Affordable Dream <br /> Cars for Rental</h2>
                 <p className="text-muted">Fulfil your automotive fantasies without breaking the bank. <br /> Check out our affordable car rentals for an opulent yet economical ride.</p>

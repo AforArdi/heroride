@@ -1,5 +1,6 @@
 "use client";
 import { FcGoogle } from "react-icons/fc";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {
     Button,
     Description,
@@ -15,8 +16,11 @@ import {
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 
 const LoginPage = () => {
+    const [isPassVisible, setIsPassVisible] = useState(false);
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -61,29 +65,34 @@ const LoginPage = () => {
                         </TextField>
 
                         {/* password */}
-                        <TextField
-                            isRequired
-                            minLength={8}
-                            name="password"
-                            type="password"
-                            validate={(value) => {
-                                if (value.length < 6) {
-                                    return "Password must be at least 8 characters";
-                                }
-                                if (!/[A-Z]/.test(value)) {
-                                    return "Password must contain at least one uppercase letter";
-                                }
-                                if (!/[0-9]/.test(value)) {
-                                    return "Password must contain at least one number";
-                                }
-                                return null;
-                            }}
-                        >
-                            <Label>Password</Label>
-                            <Input placeholder="Enter your password" />
-                            <Description>Must be at least 6 characters with 1 uppercase and 1 number</Description>
-                            <FieldError />
-                        </TextField>
+                        <div className="relative">
+                            <TextField
+                                isRequired
+                                minLength={8}
+                                name="password"
+                                type={isPassVisible ? "text" : "password"}
+                                validate={(value) => {
+                                    if (value.length < 6) {
+                                        return "Password must be at least 8 characters";
+                                    }
+                                    if (!/[A-Z]/.test(value)) {
+                                        return "Password must contain at least one uppercase letter";
+                                    }
+                                    if (!/[0-9]/.test(value)) {
+                                        return "Password must contain at least one number";
+                                    }
+                                    return null;
+                                }}
+                            >
+                                <Label>Password</Label>
+                                <Input placeholder="Enter your password"  />
+                                <span className="absolute right-3 top-1/2 -translate-y-1/2 z-10 cursor-pointer text-gray-500 hover:text-gray-800 transition-colors" onClick={() => setIsPassVisible(!isPassVisible)}>
+                                    {isPassVisible ? <FaRegEye size={20}></FaRegEye> : <FaRegEyeSlash size={20}></FaRegEyeSlash>}
+                                </span>
+                                <Description>Must be at least 6 characters with 1 uppercase and 1 number</Description>
+                                <FieldError />
+                            </TextField>
+                        </div>
 
                     </FieldGroup>
                     <Fieldset.Actions className="flex flex-col justify-center">

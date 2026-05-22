@@ -30,7 +30,7 @@ const Navbar = () => {
                         <Image src={'https://i.postimg.cc/3N0WPDg6/logo.png'}
                             alt="Logo" width={100} height={40} referrerPolicy="no-referrer" />
                     </div>
-                    <ul className="flex items-center gap-4">
+                    <ul className="hidden md:flex items-center gap-4">
                         {navLinks}
                     </ul>
                     <div>

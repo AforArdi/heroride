@@ -12,9 +12,9 @@ const Faq = () => {
             </div>
             <h2 className="text-3xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
             <p className="text-muted text-center">Use securing confined his shutters. Delightful as he it acceptance an solicitude discretion reasonably.<br /> Carriage we husbands advanced an perceive greatest.</p>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 px-6">
                 <Image src={'https://i.postimg.cc/9MW7Q1hy/faq-section-car.png'}
-                    alt="red mini cooper" height={300} width={400}
+                    alt="red mini cooper" height={300} width={400} unoptimized
                 ></Image>
                 <FaqAccordion></FaqAccordion>
             </div>

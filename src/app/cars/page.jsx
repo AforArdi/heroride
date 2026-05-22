@@ -17,7 +17,7 @@ const ExploreCarsPage = async ({ searchParams }) => {
         <div className="max-w-7xl mx-auto w-full my-10">
             <h2 className="text-3xl font-bold mb-6 text-center">Choose Your Next Ride</h2>
             {/* search and filter */}
-            <div className="flex items-center justify-between my-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between my-6 gap-4">
                 <SearchBar></SearchBar>
                 <div className="w-full sm:w-auto flex justify-end">
                     <SelectFilter></SelectFilter>
