@@ -3,6 +3,11 @@ import SearchBar from "@/components/utils/SearchBar";
 import SelectFilter from "@/components/utils/SelectFilter";
 import { getCars } from "@/lib/data";
 
+export const metadata = {
+  title: "Explore Cars | HeroRide",
+  description: "Browse our extensive fleet of premium vehicles. Filter by type, price, and features to find your perfect ride.",
+};
+
 const ExploreCarsPage = async ({ searchParams }) => {
     const sParams = await searchParams;
 

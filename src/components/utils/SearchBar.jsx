@@ -29,14 +29,14 @@ const SearchBar = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 // startContent={<FiSearch className="text-gray-400" size={18} />}
-                className="w-full"
+                className="w-full rounded-none"
                 size="md"
                 variant="bordered"
                 radius="md"
             />
             <Button
                 onClick={handleSearch}
-                className="bg-[#2D4059] text-white font-medium rounded-md px-6 shadow-sm hover:bg-[#1a2636] transition-colors"
+                className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center"
                 size="md"
             >
                 Search

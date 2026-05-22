@@ -17,6 +17,7 @@ import SelectCarType from "./SelectCarType";
 import { UpdateAddedCarAction } from "@/lib/action";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { BiEdit } from "react-icons/bi";
 
 const CarInfoUpdateModal = ({addedCar}) => {
     const router = useRouter();
@@ -39,7 +40,7 @@ const CarInfoUpdateModal = ({addedCar}) => {
 
     return (
         <Modal>
-            <Button size="sm" variant="bordered" className="border-blue-600 text-blue-600 font-medium rounded-md">
+            <Button size="sm" variant="bordered" className="border-[#2D4059] text-[#2D4059] font-medium rounded-md">
                 <FiEdit2 size={14} className="mr-1" /> Edit
             </Button>
             <Modal.Backdrop>
@@ -48,12 +49,11 @@ const CarInfoUpdateModal = ({addedCar}) => {
                         <Modal.CloseTrigger />
                         <Modal.Header>
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                                <Envelope className="size-5" />
+                                <BiEdit className="size-5" />
                             </Modal.Icon>
-                            <Modal.Heading>Contact Us</Modal.Heading>
+                            <Modal.Heading>Edit Car Information</Modal.Heading>
                             <p className="mt-1.5 text-sm leading-5 text-muted">
-                                Fill out the form below and we'll get back to you. The modal adapts automatically
-                                when the keyboard appears on mobile.
+                                Update the details of your car listing to keep it accurate and appealing to potential renters.
                             </p>
                         </Modal.Header>
                         <Modal.Body className="p-6">
@@ -132,10 +132,7 @@ const CarInfoUpdateModal = ({addedCar}) => {
 
 
                                     <Modal.Footer>
-                                        <Button slot="close" variant="secondary">
-                                            Cancel
-                                        </Button>
-                                        <Button type="submit">Update</Button>
+                                        <Button type="submit" className='bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center w-full'>Update</Button>
                                     </Modal.Footer>
                                 </form>
                             </Surface>

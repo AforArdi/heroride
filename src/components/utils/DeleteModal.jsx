@@ -6,7 +6,7 @@ const DeleteModal = ({ handleDelete, addedCar }) => {
 
     return (
         <AlertDialog>
-            <Button size="sm" variant="bordered" color="danger" className="font-medium rounded-md">
+            <Button size="sm" variant="bordered" color="danger" className="border-[#2D4059] text-[#2D4059] font-medium rounded-md">
                 <FiTrash2 size={14} className="mr-1" /> Delete
             </Button>
             <AlertDialog.Backdrop>
@@ -23,7 +23,7 @@ const DeleteModal = ({ handleDelete, addedCar }) => {
                             </p>
                         </AlertDialog.Body>
                         <AlertDialog.Footer>
-                            <Button className={'w-full'} onClick={handleDelete} slot="close" variant="danger">
+                            <Button className={'bg-red-500 font-bold text-white shadow-md shadow-red-500/10 px-6 rounded-none hover:bg-white hover:text-red-500 border border-red-500 hover:border-red-500 transition-colors duration-300 flex items-center gap-2 justify-center w-full'} onClick={handleDelete} slot="close" variant="danger">
                                 Confirm Delete
                             </Button>
                         </AlertDialog.Footer>

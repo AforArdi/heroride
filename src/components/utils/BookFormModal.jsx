@@ -9,7 +9,7 @@ import { MdOutlineDateRange } from "react-icons/md";
 
 const BookFormModal = ({ car, user }) => {
     const router = useRouter();
-    const { _id, carName, dailyRentPrice, carType, image, pickupLocation } = car;
+    const { _id, carName, dailyRentPrice, carType, image, pickupLocation, availability } = car;
     const { id, name } = user;
 
     const handleBooking = async (e) => {
@@ -41,10 +41,11 @@ const BookFormModal = ({ car, user }) => {
     return (
         <Modal>
             <Button
+            isDisabled={!availability}
                 size="lg"
-                className="w-full bg-[#0a192f] hover:bg-[#112a4d] text-white font-bold rounded-xl py-6"
+                className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center w-full"
             >
-                <MdOutlineDateRange size={20} className="mr-1" /> Book Now
+                <MdOutlineDateRange size={20} className="mr-1" /> {availability ? "Book Now" : "Currently Unavailable"}
             </Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
@@ -98,10 +99,9 @@ const BookFormModal = ({ car, user }) => {
                                         <TextArea className="h-32" placeholder="Any special requests or notes" />
                                     </TextField>
                                     <Modal.Footer>
-                                        <Button slot="close" variant="secondary">
-                                            Cancel
-                                        </Button>
-                                        <Button type="submit">Confirm Booking</Button>
+                                        <Button type="submit"
+                                        className={'bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center w-full'}
+                                        >Confirm Booking</Button>
                                     </Modal.Footer>
                                 </form>
                             </Surface>

@@ -3,14 +3,8 @@ import { getAddedCarsById } from "@/lib/data";
 import { Button, Chip } from "@heroui/react";
 import { headers } from "next/headers";
 import Link from "next/link";
-import Image from "next/image";
 import { CiCirclePlus } from "react-icons/ci";
-import { FiEdit2, FiTrash2, FiTag, FiUsers, FiLink } from "react-icons/fi";
-import { IoLocationOutline, IoCarOutline } from "react-icons/io5";
-import { HiOutlineDocumentText } from "react-icons/hi2";
-import DeleteModal from "@/components/utils/DeleteModal";
-import { DeleteAddedCarAction } from "@/lib/action";
-import { redirect } from "next/navigation";
+import { IoCarOutline } from "react-icons/io5";
 import AddedCarCard from "@/components/utils/AddedCarCard";
 
 const MyAddedCarsPage = async () => {
@@ -31,7 +25,7 @@ const MyAddedCarsPage = async () => {
                     <p className="text-muted">Manage the cars you have added to HeroRide.</p>
                 </div>
                 <Link href={'/add-car'}>
-                    <Button className="bg-[#0a192f] text-white rounded-md font-medium px-6 py-2 h-auto">
+                    <Button className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center">
                         <CiCirclePlus size={20} className="mr-1" /> Add New Car
                     </Button>
                 </Link>

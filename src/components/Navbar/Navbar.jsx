@@ -36,8 +36,8 @@ const Navbar = () => {
                     <div>
                         {user ? <ProfileDropDown user={user}></ProfileDropDown> :
                             <div className="flex items-center gap-4">
-                                <Link className={'no-underline'} href="/login"><Button className={'bg-[#2D4059]'}>Login</Button></Link>
-                                <Link className={'no-underline'} href="/register"><Button className={'bg-[#2D4059]'}>Register</Button></Link>
+                                <Link className={'no-underline'} href="/login"><Button className={'bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center'}>Login</Button></Link>
+                                <Link className={'no-underline'} href="/register"><Button className={'bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center'}>Register</Button></Link>
                             </div>}
                     </div>
                 </header>

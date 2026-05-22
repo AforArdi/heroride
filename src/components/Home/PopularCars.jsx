@@ -10,7 +10,8 @@ const PopularCars = async () => {
     return (
         <div className="max-w-7xl mx-auto my-20">
             <div className="flex flex-col items-center justify-center mb-3 gap-4">
-                <SwitchTheme></SwitchTheme>
+                {/* will work on the dark mode later */}
+                {/* <SwitchTheme></SwitchTheme> */}
                 <Chip color="success"  className="px-4 py-1">
                     <Chip.Label>Popular</Chip.Label>
                 </Chip>

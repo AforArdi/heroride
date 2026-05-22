@@ -4,7 +4,7 @@ import {AlertDialog, Button} from "@heroui/react";
 const CancelModal = ({handleCancelBooking, carName}) => {
     return (
         <AlertDialog>
-            <Button variant="danger-soft">Cancel</Button>
+            <Button variant="danger-soft" className={'border-[#2D4059] text-[#2D4059] font-medium rounded-md'}>Cancel</Button>
             <AlertDialog.Backdrop>
                 <AlertDialog.Container>
                     <AlertDialog.Dialog className="sm:max-w-100">

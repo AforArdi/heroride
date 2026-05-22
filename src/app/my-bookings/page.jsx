@@ -24,7 +24,7 @@ const MyBookings = async () => {
                     <p className="text-muted">Manage and view the cars you have booked for your trips.</p>
                 </div>
                 <Link href={'/cars'}>
-                    <Button className="bg-[#0a192f] text-white rounded-md font-medium px-6 py-2 h-auto">
+                    <Button className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center justify-center">
                         <CiCirclePlus size={20} className="mr-1" /> Book Another Car
                     </Button>
                 </Link>

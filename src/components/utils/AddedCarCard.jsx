@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import { FiEdit2, FiTrash2, FiTag, FiUsers, FiLink } from "react-icons/fi";
+import { FiTag, FiUsers } from "react-icons/fi";
 import { IoLocationOutline, IoCarOutline } from "react-icons/io5";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import DeleteModal from "@/components/utils/DeleteModal";

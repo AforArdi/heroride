@@ -23,7 +23,7 @@ const Banner = () => {
                     <Button
                         color="primary"
                         size="md"
-                        className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-xl hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center"
+                        className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center"
                     >
                         Explore Cars
                     </Button>

@@ -128,10 +128,10 @@ const RegisterPage = () => {
 
                     </FieldGroup>
                     <Fieldset.Actions className="flex flex-col justify-center">
-                        <Button type="submit" className={'w-full'}>
+                        <Button type="submit" className={'w-full bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center'}>
                             Register
                         </Button>
-                        <Button onClick={handleGoogleSign} type="reset" variant="secondary" className={'flex items-center gap-2 w-full'}>
+                        <Button onClick={handleGoogleSign} type="reset" variant="secondary" className={'w-full bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center'}>
                             <FcGoogle></FcGoogle> Google
                         </Button>
                     </Fieldset.Actions>
