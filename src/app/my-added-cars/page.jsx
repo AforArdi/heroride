@@ -47,7 +47,7 @@ const MyAddedCarsPage = async () => {
                             You haven't listed any cars on HeroRide yet. Add your first vehicle to start receiving bookings and earning money!
                         </p>
                         <Link href={'/add-car'}>
-                            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-sm px-6 py-2">
+                            <Button className="bg-[#2D4059] font-bold text-white shadow-md shadow-blue-500/10 px-6 rounded-none hover:bg-white hover:text-[#2D4059] border border-[#2D4059] hover:border-[#2D4059] transition-colors duration-300 flex items-center gap-2 justify-center">
                                 <CiCirclePlus size={20} className="mr-1.5" /> Add Your First Car
                             </Button>
                         </Link>

@@ -86,7 +86,7 @@ const BookFormModal = ({ car, user }) => {
                                     </Select>
 
                                     {/* booking date */}
-                                    <DateField className="w-full" name="bookingDate">
+                                    <DateField isRequired className="w-full" name="bookingDate">
                                         <Label>Date</Label>
                                         <DateField.Group>
                                             <DateField.Input>{(segment) => <DateField.Segment segment={segment} />}</DateField.Input>
