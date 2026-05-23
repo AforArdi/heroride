@@ -27,8 +27,10 @@ const Navbar = () => {
             <nav className=" max-w-7xl mx-auto">
                 <header className="flex h-16 items-center justify-between px-6">
                     <div>
-                        <Image src={'https://i.postimg.cc/3N0WPDg6/logo.png'}
+                        <Link href="/">
+                            <Image src={'https://i.postimg.cc/3N0WPDg6/logo.png'}
                             alt="Logo" width={100} height={40} referrerPolicy="no-referrer" />
+                        </Link>
                     </div>
                     <ul className="hidden md:flex items-center gap-4">
                         {navLinks}

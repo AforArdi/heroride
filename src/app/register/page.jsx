@@ -39,7 +39,7 @@ const RegisterPage = () => {
 
         if (res) {
             toast.success('Registration successful!');
-            redirect('/');
+            redirect('/login');
         }
         if (error) {
             toast.error(`${error.message}`);

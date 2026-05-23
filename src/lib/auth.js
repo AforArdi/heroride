@@ -23,6 +23,7 @@ export const auth = betterAuth({
   ],
   emailAndPassword: {
     enabled: true,
+    autoSignIn: false, // Automatically register users who try to log in with email and password but don't have an account yet.
   },
   socialProviders: {
     google: {
