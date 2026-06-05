@@ -1,6 +1,7 @@
 # 🚗 HeroRide - Premium Car Rental Platform
 
 <img width="960" height="447" alt="hero-ride-ss" src="https://github.com/user-attachments/assets/20c0b9a9-042a-44d2-b9c9-05820013373c" />
+<img width="960" height="449" alt="hero-ride-ss-2" src="https://github.com/user-attachments/assets/308ab285-89aa-4ab5-b92c-94433c8318c3" />
 
 > 🚀 **[Live Demo](https://heroride.vercel.app)** - Check out the live application now!
 
