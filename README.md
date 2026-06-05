@@ -1,5 +1,7 @@
 # 🚗 HeroRide - Premium Car Rental Platform
 
+<img width="960" height="448" alt="hero-ride-ss" src="https://github.com/user-attachments/assets/e46c2868-0d13-41b6-89ce-8fb71fc9e4f3" />
+
 > 🚀 **[Live Demo](https://heroride.vercel.app)** - Check out the live application now!
 
 Hey there! Welcome to **HeroRide**. I built this full-stack web application as a major milestone in my 180-day MERN stack learning journey. I'm super excited to share it because building this platform really pushed my skills to the next level in connecting a Next.js frontend with a secure Express backend!
